@@ -1,11 +1,4 @@
-/*Ejecutar el siguiente comando 1 vez para crear la base:
-CREATE DATABASE practica
-Una vez creada la base de datos, probar la insercion de las tablas con el ROLLBACK, si es correcta volver a ejecutar solo con el COMMIT
-Lo hice de esta forma porque sino, no me agarra el "USE practica"
-
-*/
-
-BEGIN TRAN	
+	CREATE DATABASE practica
 	
 	USE practica
 
@@ -14,15 +7,6 @@ BEGIN TRAN
 		PRIMARY KEY(id),
 		nombre VARCHAR(50)UNIQUE not null,
 	)
-	SELECT TOP(10) 'Generos'TablaGeneros, * FROM Generos
-
-	CREATE TABLE Perfiles(
-		id INT IDENTITY,
-		PRIMARY KEY(id),
-		nombre VARCHAR(50)UNIQUE not null,
-		descripcion VARCHAR(255)
-	)
-	SELECT TOP(10) 'Perfiles'TablasPerfiles, * FROM Perfiles
 
 	CREATE TABLE Usuarios(
 		Id INT IDENTITY,
@@ -36,8 +20,14 @@ BEGIN TRAN
 		UltimoAcceso DATETIME,
 		FechaBaja DATETIME
 	)
-	SELECT TOP(10)'Usuarios'TablasUsuarios, * FROM Usuarios
-
+	
+	CREATE TABLE Perfiles(
+		id INT IDENTITY,
+		PRIMARY KEY(id),
+		nombre VARCHAR(50)UNIQUE not null,
+		descripcion VARCHAR(255)
+	)
+	
 	CREATE TABLE DatosPersonales(
 		Id INT IDENTITY,
 		PRIMARY KEY(Id),
@@ -54,8 +44,7 @@ BEGIN TRAN
 		DNI VARCHAR(20),
 		Mail VARCHAR(100)
 	)
-	SELECT TOP(10) 'DatosPersonales'TablasDatosPersonales, * FROM DatosPersonales
-
+	
 	CREATE TABLE Logins(
 		Id INT IDENTITY,
 		PRIMARY KEY(id),
@@ -65,7 +54,4 @@ BEGIN TRAN
 		DireccionIP VARCHAR(45),
 		Exitoso BIT not null
 	)
-	SELECT TOP(10) 'Logins'TablasLogins, * FROM Logins
-
-ROLLBACK TRAN
---COMMIT TRAN
+	
