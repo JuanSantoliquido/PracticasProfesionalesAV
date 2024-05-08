@@ -1,5 +1,5 @@
   create database practica
-
+  --test 
   create table Generos(
   id integer identity,
   primary key(id),
