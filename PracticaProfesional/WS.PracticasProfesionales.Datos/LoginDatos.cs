@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WS.PracticasProfesionales.Datos
 {
-    public class Class1
+    public class LoginDatos
     {
     }
 }
