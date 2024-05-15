@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Datos\obj\Debug\WS.PracticasProfesionales.Datos.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Datos\obj\Debug\WS.PracticasProfesionales.Datos.csproj.CoreCompileInputs.cache

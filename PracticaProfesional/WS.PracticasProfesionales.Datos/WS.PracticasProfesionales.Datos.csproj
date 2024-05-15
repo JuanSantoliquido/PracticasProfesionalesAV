@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
     <Compile Include="LoginDatos.cs" />
     <Compile Include="Models\DTODatosPersonales.cs" />
     <Compile Include="Models\DTOGeneros.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Models\DTOPerfiles.cs" />
     <Compile Include="Models\DTOUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroDatos.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
