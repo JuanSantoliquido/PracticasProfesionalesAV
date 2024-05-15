@@ -23,7 +23,6 @@ SET XACT_ABORT ON;
 				DECLARE @HashThis VARCHAR(255);  
 				SET @HashThis = CONVERT(VARCHAR(255),@Contraseña);
 				SET @HashThis= HASHBYTES('SHA2_256', @HashThis);
-				SELECT @HashThis;
 				INSERT INTO Usuarios (NombreUsuario,Email,Contraseña,PerfilId)VALUES (@NombreUsuario,@Email,@HashThis,@PerfilId)
 				
 			END TRY
