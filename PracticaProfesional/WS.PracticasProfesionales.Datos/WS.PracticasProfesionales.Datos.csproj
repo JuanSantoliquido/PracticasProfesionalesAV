@@ -49,7 +49,10 @@
     <Compile Include="Models\DTOPerfiles.cs" />
     <Compile Include="Models\DTOUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroDatos.cs" />
+    <Compile Include="UsuarioDatos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Configuration\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

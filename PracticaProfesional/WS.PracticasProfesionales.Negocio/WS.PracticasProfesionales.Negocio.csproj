@@ -44,5 +44,11 @@
     <Compile Include="RegistroNeg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WS.PracticasProfesionales.Datos\WS.PracticasProfesionales.Datos.csproj">
+      <Project>{956fd1b5-e9ce-4548-bab2-77ac5ae23e64}</Project>
+      <Name>WS.PracticasProfesionales.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
