@@ -12,7 +12,7 @@ namespace WS.PracticasProfesionales.Datos
     {
         public static System.Data.SqlClient.SqlConnection ObtenerConnexionSQL()
         {
-            string _conString = System.Configuration.ConfigurationManager.ConnectionStrings["MapaDB"].ConnectionString;
+            string _conString = System.Configuration.ConfigurationManager.ConnectionStrings["practica"].ConnectionString;
             return new System.Data.SqlClient.SqlConnection(_conString);
         }
     }

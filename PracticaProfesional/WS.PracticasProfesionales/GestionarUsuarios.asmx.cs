@@ -25,6 +25,42 @@ namespace WS.PracticasProfesionales
 
 
         [WebMethod(Description = "InsertarUsuario: Registra un usuario.")]
+        public int InsertarUsuario(string id, string NombreUsuario, string email, string Contraseña, string PerfilId, string FechaCreacion, string UltimoAcceso, string FechaBaja)
+        {
+
+            int respuesta = -1;
+
+            RegistroNeg usuarios = new RegistroNeg();
+            try
+            {
+                DTOUsuarios usuario = new DTOUsuarios();
+                usuario.id = id;
+                usuario.NombreUsuario = NombreUsuario;
+                usuario.email = email;
+                usuario.Contraseña = Contraseña;
+                usuario.PerfilId = PerfilId;
+                usuario.FechaCreacion = FechaCreacion;
+                usuario.UltimoAcceso = UltimoAcceso;
+                usuario.FechaBaja = FechaBaja;
+            }
+            catch (System.Data.SqlClient.SqlException exsql)
+            {
+
+                //log.Fatal(exsql.Message + "***" + exsql.StackTrace);
+            }
+
+            return respuesta;
+        }
+    }
+    #endregion
+
+}
+
+
+
+
+/*
+         [WebMethod(Description = "InsertarUsuario: Registra un usuario.")]
         public int InsertarUsuario(DTOUsuarios usuario)
         {
 
@@ -44,7 +80,5 @@ namespace WS.PracticasProfesionales
 
             return respuesta;
         }
-    }
-    #endregion
-
-}
+ 
+ */

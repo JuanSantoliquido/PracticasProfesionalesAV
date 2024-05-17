@@ -57,3 +57,7 @@ C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\Practi
 C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\obj\Debug\WS.PracticasProfesionales.csproj.CopyComplete
 C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\obj\Debug\WS.PracticasProfesionales.dll
 C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\obj\Debug\WS.PracticasProfesionales.pdb
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\bin\WS.PracticasProfesionales.Datos.dll
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\bin\WS.PracticasProfesionales.Negocio.dll
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\bin\WS.PracticasProfesionales.Datos.pdb
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales\bin\WS.PracticasProfesionales.Negocio.pdb

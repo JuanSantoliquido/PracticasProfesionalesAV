@@ -1,2 +1,9 @@
 C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\obj\Debug\WS.PracticasProfesionales.Negocio.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\obj\Debug\WS.PracticasProfesionales.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\bin\Debug\WS.PracticasProfesionales.Negocio.dll
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\bin\Debug\WS.PracticasProfesionales.Negocio.pdb
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\bin\Debug\WS.PracticasProfesionales.Datos.dll
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\bin\Debug\WS.PracticasProfesionales.Datos.pdb
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\obj\Debug\WS.PracticasProfesionales.Negocio.csproj.CopyComplete
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\obj\Debug\WS.PracticasProfesionales.Negocio.dll
+C:\Users\User\Desktop\PracticaProfesional\PracticasProfesionalesAVBackend\PracticaProfesional\WS.PracticasProfesionales.Negocio\obj\Debug\WS.PracticasProfesionales.Negocio.pdb
