@@ -21,15 +21,15 @@ END TRY
 BEGIN CATCH
 	ROLLBACK TRANSACTION
 
-    SELECT 
+	DECLARE @result INT
+    DECLARE @COUNT INT =0
 
-         ERROR_NUMBER() AS ErrorNumber
-        ,ERROR_SEVERITY() AS ErrorSeverity
-        ,ERROR_STATE() AS ErrorState
-        ,ERROR_PROCEDURE() AS ErrorProcedure
-        ,ERROR_LINE() AS ErrorLine
-        ,ERROR_MESSAGE() AS ErrorMessage;
-
+	SELECT @COUNT = COUNT(*) FROM Usuarios WHERE id=@usuarioId
+	IF @COUNT = 0
+	BEGIN
+		SET @result=2
+		RETURN @result
+	END
 
     IF @@TRANCOUNT > 0
         ROLLBACK TRANSACTION;

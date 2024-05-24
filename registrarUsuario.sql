@@ -9,17 +9,13 @@ CREATE PROCEDURE registrarUsuario
 		@Email VARCHAR(100),
 		@Contraseña VARCHAR(255),
 		@PerfilId INT
+		
 		AS 
 		BEGIN TRAN
 SET XACT_ABORT ON; 
 			BEGIN TRY
      
-				IF EXISTS (SELECT NombreUsuario,Email,Contraseña,PerfilId FROM Usuarios WHERE NombreUsuario=@NombreUsuario OR Email=@Email)
-					BEGIN
-		
-						--RAISERROR('¡El Nombre de Usuario o la Contraseña ya existe!', 11, 1);
 				
-				END
 				DECLARE @HashThis VARCHAR(255);  
 				SET @HashThis = CONVERT(VARCHAR(255),@Contraseña);
 				SET @HashThis= HASHBYTES('SHA2_256', @HashThis);
@@ -29,14 +25,15 @@ SET XACT_ABORT ON;
 BEGIN CATCH
 	ROLLBACK TRANSACTION
 
-    SELECT 
-
-        -- ERROR_NUMBER() AS ErrorNumber
-        --,ERROR_SEVERITY() AS ErrorSeverity
-        --,ERROR_STATE() AS ErrorState
-        --,ERROR_PROCEDURE() AS ErrorProcedure
-        --,ERROR_LINE() AS ErrorLine
-        --,ERROR_MESSAGE() AS ErrorMessage;
+	DECLARE @result INT
+	IF EXISTS (SELECT NombreUsuario,Email,Contraseña,PerfilId FROM Usuarios WHERE NombreUsuario=@NombreUsuario OR Email=@Email)
+					BEGIN
+						
+						SET @result=1
+						RETURN @result
+				
+					END
+  
 
 
     IF @@TRANCOUNT > 0
@@ -45,7 +42,7 @@ END CATCH;
 
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
-GO--@result
+GO
 
    
    
