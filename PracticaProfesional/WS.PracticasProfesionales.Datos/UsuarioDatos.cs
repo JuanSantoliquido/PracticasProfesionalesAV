@@ -12,29 +12,39 @@ namespace WS.PracticasProfesionales.Datos
         #region  Usuarios
 
         //SP insert --> RegistarUsuario
-        public int InsertarUsuario(DTOUsuarios usuario)
+public int InsertarUsuario(DTOUsuarios usuario)
+{
+    using (System.Data.SqlClient.SqlConnection oCnn = Conexion.ObtenerConnexionSQL())
+    {
+        using (System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("registrarUsuario", oCnn))
         {
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            System.Data.SqlClient.SqlConnection oCnn = Conexion.ObtenerConnexionSQL();
-            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("registrarUsuario", oCnn)
-            {
-                CommandType = System.Data.CommandType.StoredProcedure
-            };
             cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@NombreUsuario", usuario.NombreUsuario));
             cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@Email", usuario.email));
             cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@Contraseña", usuario.Contraseña));
             cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@PerfilId", usuario.PerfilId));
 
-            int result = -1;
-            cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
-
+            
             oCnn.Open();
-            cmd.ExecuteNonQuery();
-            result = Convert.ToInt32(cmd.Parameters["@Result"].Value);
+            object result = cmd.ExecuteScalar();
             oCnn.Close();
 
-            return result;
+           
+            if (result != null) 
+            {
+              
+                int rowsAffected = Convert.ToInt32(result);
+                return rowsAffected;
+            }
+            else 
+            {
+
+                return -1;
+            }
         }
+    }
+}
 
 
 

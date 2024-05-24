@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="LoginDatos.cs" />
     <Compile Include="Models\DTODatosPersonales.cs" />
     <Compile Include="Models\DTOGeneros.cs" />
     <Compile Include="Models\DTOLogins.cs" />

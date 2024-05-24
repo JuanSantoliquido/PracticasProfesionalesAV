@@ -9,7 +9,7 @@ using WS.PracticasProfesionales.Datos.Models;
 
 namespace WS.PracticasProfesionales.Negocio
 {
-    public class RegistroNeg
+    public class UsuarioNeg
     {
 
         #region Usuarios

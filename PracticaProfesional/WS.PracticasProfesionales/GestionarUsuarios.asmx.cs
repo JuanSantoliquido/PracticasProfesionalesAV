@@ -25,23 +25,20 @@ namespace WS.PracticasProfesionales
 
 
         [WebMethod(Description = "InsertarUsuario: Registra un usuario.")]
-        public int InsertarUsuario(string id, string NombreUsuario, string email, string Contraseña, string PerfilId, string FechaCreacion, string UltimoAcceso, string FechaBaja)
+        public int InsertarUsuario(string NombreUsuario, string email, string Contraseña, string PerfilId)
         {
 
             int respuesta = -1;
 
-            RegistroNeg usuarios = new RegistroNeg();
+            UsuarioNeg usuarios = new UsuarioNeg();
             try
             {
                 DTOUsuarios usuario = new DTOUsuarios();
-                usuario.id = id;
                 usuario.NombreUsuario = NombreUsuario;
                 usuario.email = email;
                 usuario.Contraseña = Contraseña;
                 usuario.PerfilId = PerfilId;
-                usuario.FechaCreacion = FechaCreacion;
-                usuario.UltimoAcceso = UltimoAcceso;
-                usuario.FechaBaja = FechaBaja;
+                usuarios.InsertarUsuario(usuario);
             }
             catch (System.Data.SqlClient.SqlException exsql)
             {
@@ -51,10 +48,87 @@ namespace WS.PracticasProfesionales
 
             return respuesta;
         }
+
+
+
+
+        [WebMethod(Description = "InsertarLogin: Registra un Login.")]
+        public int LoginUsuario(string UsuarioId, string DireccionIP, string Exitoso)
+        {
+
+            int respuesta = -1;
+
+            UsuarioNeg logins = new UsuarioNeg(); 
+            try
+            {
+                DTOLogins login = new DTOLogins();
+                login.UsuarioId = UsuarioId;
+                login.DireccionIP = DireccionIP;
+                login.Exitoso = Exitoso;
+                logins.InsertarLogin(login);
+            }
+            catch (System.Data.SqlClient.SqlException exsql)
+            {
+
+                //log.Fatal(exsql.Message + "***" + exsql.StackTrace);
+            }
+
+            return respuesta;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
     #endregion
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

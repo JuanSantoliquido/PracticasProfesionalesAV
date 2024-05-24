@@ -12,8 +12,8 @@ namespace WS.PracticasProfesionales.Datos
     {
         public static System.Data.SqlClient.SqlConnection ObtenerConnexionSQL()
         {
-            string _conString = System.Configuration.ConfigurationManager.ConnectionStrings["practica"].ConnectionString;
-            return new System.Data.SqlClient.SqlConnection(_conString);
+            string connectionString = @"Data Source=DESKTOP-5J66NV5\SQLEXPRESS;Initial Catalog=practica;Integrated Security=True";
+            return new System.Data.SqlClient.SqlConnection(connectionString);
         }
     }
 }

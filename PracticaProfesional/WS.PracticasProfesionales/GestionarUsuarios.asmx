@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="GestionarUsuarios.asmx.cs" Class="WS.PracticasProfesionales.WebService1" %>
+﻿<%@ WebService Language="C#" CodeBehind="GestionarUsuarios.asmx.cs" Class="WS.PracticasProfesionales.GestionarUsuarios" %>
