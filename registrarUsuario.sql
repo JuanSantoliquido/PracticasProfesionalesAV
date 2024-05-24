@@ -17,7 +17,7 @@ SET XACT_ABORT ON;
 				IF EXISTS (SELECT NombreUsuario,Email,Contraseña,PerfilId FROM Usuarios WHERE NombreUsuario=@NombreUsuario OR Email=@Email)
 					BEGIN
 		
-						RAISERROR('¡El Nombre de Usuario o la Contraseña ya existe!', 11, 1);
+						--RAISERROR('¡El Nombre de Usuario o la Contraseña ya existe!', 11, 1);
 				
 				END
 				DECLARE @HashThis VARCHAR(255);  
@@ -31,12 +31,12 @@ BEGIN CATCH
 
     SELECT 
 
-         ERROR_NUMBER() AS ErrorNumber
-        ,ERROR_SEVERITY() AS ErrorSeverity
-        ,ERROR_STATE() AS ErrorState
-        ,ERROR_PROCEDURE() AS ErrorProcedure
-        ,ERROR_LINE() AS ErrorLine
-        ,ERROR_MESSAGE() AS ErrorMessage;
+        -- ERROR_NUMBER() AS ErrorNumber
+        --,ERROR_SEVERITY() AS ErrorSeverity
+        --,ERROR_STATE() AS ErrorState
+        --,ERROR_PROCEDURE() AS ErrorProcedure
+        --,ERROR_LINE() AS ErrorLine
+        --,ERROR_MESSAGE() AS ErrorMessage;
 
 
     IF @@TRANCOUNT > 0
@@ -45,7 +45,7 @@ END CATCH;
 
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
-GO
+GO--@result
 
    
    

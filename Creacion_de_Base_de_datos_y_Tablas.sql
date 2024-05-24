@@ -9,10 +9,10 @@
 	)
 
 	CREATE TABLE Usuarios(
-		Id INT IDENTITY,
+		Id INT IDENTITY,--clave primaria compuesta
 		PRIMARY KEY(Id),
-		NombreUsuario VARCHAR(50)UNIQUE not null,
-		Email VARCHAR(100)UNIQUE not null,
+		NombreUsuario VARCHAR(50)UNIQUE not null,--clave primaria compuesta
+		Email VARCHAR(100)UNIQUE not null,--clave primaria compuesta
 		Contraseña VARCHAR(255)UNIQUE not null,
 		PerfilId INT not null,
 		FOREIGN KEY (PerfilId) REFERENCES Perfiles(Id), 
