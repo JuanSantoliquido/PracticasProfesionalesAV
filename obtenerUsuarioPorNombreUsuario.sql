@@ -6,7 +6,7 @@ END
 GO 
 CREATE PROCEDURE obtenerUsuarioPorNombreUsuario
 
-		@nombreUsuario VARCHAR(100)
+		@nombreUsuario VARCHAR(50)
 		AS 
 		BEGIN TRAN
 SET XACT_ABORT ON; 

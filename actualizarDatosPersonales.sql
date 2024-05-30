@@ -6,7 +6,7 @@ END
 GO 
 CREATE PROCEDURE actualizarDatosPersonales 
 		@usuarioId INT,
-		@nombre VARCHAR(100),
+		@nombre VARCHAR(50),
 		@apellido VARCHAR(100),
 		@fechaNacimiento DATETIME,
 		@generoId INT,
