@@ -24,7 +24,7 @@ BEGIN CATCH
 	DECLARE @result INT
     DECLARE @COUNT INT =0
 
-	SELECT @COUNT = COUNT(*) FROM Usuarios WHERE id=@usuarioId
+	SELECT @COUNT = COUNT(*) FROM DatosPersonales WHERE usuarioId=@usuarioId
 	IF @COUNT = 0
 	BEGIN
 		SET @result=2

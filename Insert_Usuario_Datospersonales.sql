@@ -13,7 +13,7 @@ SELECT * FROM [practica].[dbo].[DatosPersonales]
 	INSERT INTO Generos(nombre) VALUES ('Genero de Prueba')
 	DECLARE @IdGenero INT = @@IDENTITY
 	INSERT INTO DatosPersonales(UsuarioID,Nombre,Apellido,FechaNacimiento,GeneroId,Direccion,Nacionalidad,Pais,DNI,Mail)
-	VALUES (@IdUsuario,'Nombre de Prueba1','Apellido de Prueba1',GETDATE(),@IdGenero,'Dirrecion de prueba1','Nacionalidad de prueba1','Pais de Prueba1','12345678','prueba@gmail.com')
+	VALUES (@IdUsuario,'Nombre de Prueba1','Apellido de Prueba1',GETDATE(),@IdGenero,'Dirrecion de prueba1','Nacionalidad de prueba1','Pais de Prueba1','12345678','prueba1@gmail.com')
 	
 SELECT * FROM [practica].[dbo].[DatosPersonales]
 

@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [practica]    Script Date: 30/5/2024 15:10:55 ******/
+/****** Object:  Database [practica]    Script Date: 31/5/2024 15:14:13 ******/
 CREATE DATABASE [practica]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [practica] SET QUERY_STORE = OFF
 GO
 USE [practica]
 GO
-/****** Object:  Table [dbo].[DatosPersonales]    Script Date: 30/5/2024 15:10:55 ******/
+/****** Object:  Table [dbo].[DatosPersonales]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -109,7 +109,7 @@ UNIQUE NONCLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Generos]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  Table [dbo].[Generos]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -127,7 +127,7 @@ UNIQUE NONCLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Logins]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  Table [dbo].[Logins]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +144,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Perfiles]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  Table [dbo].[Perfiles]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -163,7 +163,7 @@ UNIQUE NONCLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuarios]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -209,7 +209,7 @@ GO
 ALTER TABLE [dbo].[Usuarios]  WITH CHECK ADD FOREIGN KEY([PerfilId])
 REFERENCES [dbo].[Perfiles] ([id])
 GO
-/****** Object:  StoredProcedure [dbo].[actualizarDatosPersonales]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  StoredProcedure [dbo].[actualizarDatosPersonales]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -262,7 +262,7 @@ END CATCH;
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
 GO
-/****** Object:  StoredProcedure [dbo].[obtenerUsuarioPorNombreUsuario]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  StoredProcedure [dbo].[obtenerUsuarioPorNombreUsuario]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -305,7 +305,7 @@ END CATCH;
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
 GO
-/****** Object:  StoredProcedure [dbo].[obtenerUsuarios]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  StoredProcedure [dbo].[obtenerUsuarios]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -347,7 +347,7 @@ END CATCH;
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
 GO
-/****** Object:  StoredProcedure [dbo].[registrarLogin]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  StoredProcedure [dbo].[registrarLogin]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -386,7 +386,7 @@ END CATCH;
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
 GO
-/****** Object:  StoredProcedure [dbo].[registrarUsuario]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  StoredProcedure [dbo].[registrarUsuario]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -395,7 +395,8 @@ CREATE PROCEDURE [dbo].[registrarUsuario]
 		@NombreUsuario VARCHAR(50),
 		@Email VARCHAR(100),
 		@Contraseña VARCHAR(255),
-		@PerfilId INT
+		@PerfilId INT,
+		@Genero INT
 		
 		AS 
 		BEGIN TRAN
@@ -407,7 +408,10 @@ SET XACT_ABORT ON;
 				SET @HashThis = CONVERT(VARCHAR(255),@Contraseña);
 				SET @HashThis= HASHBYTES('SHA2_256', @HashThis);
 				INSERT INTO Usuarios (NombreUsuario,Email,Contraseña,PerfilId)VALUES (@NombreUsuario,@Email,@HashThis,@PerfilId)
-				
+				DECLARE @IdUsuario INT = @@IDENTITY
+				INSERT INTO DatosPersonales(UsuarioID,Nombre,Apellido,FechaNacimiento,GeneroId,Direccion,Nacionalidad,Pais,DNI,Mail)
+				VALUES (@IdUsuario,@NombreUsuario,NULL,GETDATE(),@Genero,NULL,NULL,NULL,NULL,@Email)
+	
 			END TRY
 BEGIN CATCH
 	ROLLBACK TRANSACTION
@@ -430,7 +434,7 @@ END CATCH;
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION;
 GO
-/****** Object:  StoredProcedure [dbo].[usp_GetErrorInfo]    Script Date: 30/5/2024 15:10:56 ******/
+/****** Object:  StoredProcedure [dbo].[usp_GetErrorInfo]    Script Date: 31/5/2024 15:14:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
